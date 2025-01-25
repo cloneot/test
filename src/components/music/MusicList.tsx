@@ -4,7 +4,7 @@ import Grid2 from "@mui/material/Grid2";
 import { MusicReadDto } from "./MusicDto";
 import MusicCard from "./MusicCard";
 
-const Music: React.FC = () => {
+const MusicList: React.FC = () => {
   const [musicList, setMusicList] = useState<MusicReadDto[] | null>(null);
 
   console.log("render music");
@@ -35,4 +35,4 @@ const Music: React.FC = () => {
   );
 };
 
-export default Music;
+export default MusicList;

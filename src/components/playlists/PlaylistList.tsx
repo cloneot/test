@@ -10,7 +10,7 @@ type Playlist = {
   description: string;
 };
 
-const Playlists: React.FC = () => {
+const PlaylistList: React.FC = () => {
   const [playlistList, setPlaylistList] = useState<Playlist[] | null>(null);
 
   console.log("render playlists");
@@ -47,4 +47,4 @@ const Playlists: React.FC = () => {
   );
 };
 
-export default Playlists;
+export default PlaylistList;

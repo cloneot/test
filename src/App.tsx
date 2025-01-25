@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Music from "./components/music/Music";
-import Playlists from "./components/playlists/Playlists";
+import MusicList from "./components/music/MusicList";
+import PlaylistList from "./components/playlists/PlaylistList";
 import Tags from "./components/tags/Tags";
 import TopBar from "./components/TopBar";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
@@ -48,8 +48,8 @@ function App() {
         <TopBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/music" element={<Music />}></Route>
-          <Route path="/playlists" element={<Playlists />}></Route>
+          <Route path="/music" element={<MusicList />}></Route>
+          <Route path="/playlists" element={<PlaylistList />}></Route>
           <Route path="/tags" element={<Tags />}></Route>
         </Routes>
       </BrowserRouter>
