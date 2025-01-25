@@ -13,7 +13,13 @@ const Tags: React.FC = () => {
   const [tagList, setTagList] = useState<Tag[] | null>(null);
 
   useEffect(() => {
-    fetch("/api/tags")
+    fetch(`${API_URL}/tags`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         // 서버에서 받은 데이터 변환

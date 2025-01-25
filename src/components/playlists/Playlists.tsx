@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Typography,
-} from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
 import PlaylistCard from "./PlaylistCard";
 
@@ -18,9 +15,15 @@ const Playlists: React.FC = () => {
 
   console.log("render playlists");
   useEffect(() => {
-    fetch("/api/playlists")
+    fetch(`${API_URL}/playlists`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((response) => {
-        if(!response.ok) {
+        if (!response.ok) {
           throw new Error();
         }
         return response.json();

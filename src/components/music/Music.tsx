@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Typography,
-} from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
 import { MusicReadDto } from "./MusicDto";
 import MusicCard from "./MusicCard";
@@ -10,9 +7,15 @@ import MusicCard from "./MusicCard";
 const Music: React.FC = () => {
   const [musicList, setMusicList] = useState<MusicReadDto[] | null>(null);
 
-  console.log('render music');
+  console.log("render music");
   useEffect(() => {
-    fetch("/api/music")
+    fetch(`${API_URL}/music`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         setMusicList(data);

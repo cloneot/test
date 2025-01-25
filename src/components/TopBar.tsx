@@ -9,15 +9,19 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState, useEffect } from "react";
-// import GoogleIcon from "@mui/icons-material/Google";
-// import { useGoogleLogin } from "@react-oauth/google";
 
 const TopBar: React.FC = () => {
   const theme = useTheme();
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
-    fetch("/api/users/me")
+    fetch(`${API_URL}/users/me`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();
@@ -76,7 +80,7 @@ const TopBar: React.FC = () => {
         ) : (
           <Box
             component="form"
-            action="api/auth/login"
+            action={`${API_URL}/auth/login`}
             method="POST"
             sx={{ textAlign: "center", marginTop: 4 }}
           >
