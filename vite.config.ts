@@ -10,6 +10,9 @@ export default defineConfig(({ mode }) => {
       API_URL: JSON.stringify(`${env.VITE_API_URL}:${env.VITE_API_PORT}`),
     },
     plugins: [react()],
+    preview: {
+      port: 3000,
+    },
     server: {
       port: parseInt(env.VITE_APP_PORT, 10),
 

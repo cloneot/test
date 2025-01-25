@@ -38,8 +38,9 @@ const CreateMusicModal: React.FC<CreateMusicModalProps> = ({ onSubmit }) => {
         body: JSON.stringify({ ytVideoId }),
       });
       if (!res.ok) {
-        console.log(res);
-        throw new Error(res.statusText);
+        const data: { statusCode: number; message: string; path: string } =
+          await res.json();
+        throw new Error(data.message);
       }
       console.log("Music added successfully");
       onSubmit();
