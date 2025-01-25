@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
   Container,
-  Card,
-  CardContent,
   Typography,
-  Button,
 } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
 import PlaylistCard from "./PlaylistCard";

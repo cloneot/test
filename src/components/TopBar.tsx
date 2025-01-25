@@ -6,7 +6,6 @@ import {
   Toolbar,
   Link,
   useTheme,
-  FormGroup,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState, useEffect } from "react";
@@ -27,7 +26,7 @@ const TopBar: React.FC = () => {
         setUser(data);
         console.log(data);
       })
-      .catch((err) => {
+      .catch((_) => {
         setUser(null);
       });
   }, []);

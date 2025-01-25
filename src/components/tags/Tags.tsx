@@ -32,7 +32,7 @@ const Tags: React.FC = () => {
       <Container>
         <Grid2 container spacing={3}>
           {tagList.map((tag) => (
-            <Grid2 xs={12} sm={6} md={4} key={tag.tagId}>
+            <Grid2 key={tag.tagId}>
               <Card
                 style={{ width: "200px", height: "200px", overflow: "hidden" }}
               >
